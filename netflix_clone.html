@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #141414;
+            color: white;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 45px;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+        }
+        
+        .logo {
+            color: #e50914;
+            font-size: 32px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://assets.nflxext.com/ffe/siteui/vlv3/9d3533b2-0e2b-40b2-95e0-ecd7979cc88b/a3873901-5b7c-46eb-b9fa-12fea5197bd3/IN-en-20240311-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            max-width: 800px;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+        
+        .email-signup {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .email-signup input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .email-signup button {
+            background-color: #e50914;
+            color: white;
+            border: none;
+            padding: 0 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .content {
+            padding: 50px 5%;
+        }
+        
+        .row {
+            margin-bottom: 40px;
+        }
+        
+        .row h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .row-posters {
+            display: flex;
+            overflow-y: hidden;
+            overflow-x: scroll;
+            padding: 20px 0;
+            gap: 10px;
+        }
+        
+        .row-posters::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .row-poster {
+            width: 200px;
+            object-fit: contain;
+            transition: transform 450ms;
+            border-radius: 4px;
+        }
+        
+        .row-poster:hover {
+            transform: scale(1.08);
+        }
+        
+        footer {
+            padding: 50px 15%;
+            background-color: #000;
+            color: #757575;
+        }
+        
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .footer-links a {
+            color: #757575;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .email-signup {
+                flex-direction: column;
+            }
+            
+            .footer-links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">NETFLIX</a>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">TV Shows</a>
+            <a href="#">Movies</a>
+            <a href="#">New & Popular</a>
+            <a href="#">My List</a>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <h1>Unlimited movies, TV shows, and more</h1>
+        <p>Watch anywhere. Cancel anytime.</p>
+        <div class="email-signup">
+            <input type="email" placeholder="Email address">
+            <button>Get Started &gt;</button>
+        </div>
+    </section>
+    
+    <section class="content">
+        <div class="row">
+            <h2>Popular on Netflix</h2>
+            <div class="row-posters">
+                <img src="https://image.tmdb.org/t/p/w500/1XDDXPXGiI8id7MrUxK36ke7gkX.jpg" alt="Stranger Things" class="row-poster">
+                <img src="https://image.tmdb.org/t/p/w500/gFZriCkpJYsApPZEF3jhxL4yLzG.jpg" alt="The Witcher" class="row-poster">
+                <img src="https://image.tmdb.org/t/p/w500/9yxep7oJdkj3Pla9TD9gKflRApY.jpg" alt="Money Heist" class="row-poster">
+                <img src="https://image.tmdb.org/t/p/w500/6kbAMLteGO8yyewYau6bJ683sw7.jpg" alt="The Crown" class="row-poster">
+                <img src="https://image.tmdb.org/t/p/w500/34nDCQZwaEvsy4CFO5hkGRFDCVU.jpg" alt="Ozark" class="row-poster">
+                <img src="https://image.tmdb.org/t/p/w500/6fV0RZtzlEhQ9hOIZqjNZPy6Gl6.jpg" alt="The Queen's Gambit" class="row-poster">
+                <img src="https://image.tmdb.org/t/p/w500/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg" alt="Avengers: Endgame" class="row-poster">
+            </div>
+        </div>
+        
+        <div class="row">
+            <h2>Trending Now</h2>
+            <div class="row-posters">
+                <img src="https://image.tmdb.org/t/p/w500/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg" alt="Loki" class="row-poster">
+                <img src="https://image.tmdb.org/t/p/w500/bOFaAXmWWXC3Rbv4u4uM9ZSzRXP.jpg" alt="Dune" class="row-poster">
+                <img src="https://image.tmdb.org/t/p/w500/6EdKBY1J9GsVR8u9Q7w1YgqXQTG.jpg" alt="No Time to Die" class="row-poster">
+                <img src="https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg" alt="Spider-Man: No Way Home" class="row-poster">
+                <img src="https://image.tmdb.org/t/p/w500/9dKCd55IuTT5QRs989m9Qlb7d2B.jpg" alt="The Batman" class="row-poster">
+                <img src="https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg" alt="The Suicide Squad" class="row-poster">
+                <img src="https://image.tmdb.org/t/p/w500/pneF3BHmDMr1F6XQqy6QlqQKSvy.jpg" alt="The Matrix Resurrections" class="row-poster">
+            </div>
+        </div>
+        
+        <div class="row">
+            <h2>Continue Watching</h2>
+            <div class="row-posters">
+                <img src="https://image.tmdb.org/t/p/w500/wRbjVBdDo5qHAEOVYoMWpM58FSA.jpg" alt="Squid Game" class="row-poster">
+                <img src="https://image.tmdb.org/t/p/w500/34m2tygAYBGqA9MXKhRDtzYd4MR.jpg" alt="Arcane" class="row-poster">
+                <img src="https://image.tmdb.org/t/p/w500/6UH52Fmau8RPsMAbQbjwN3wJSCj.jpg" alt="The Mandalorian" class="row-poster">
+                <img src="https://image.tmdb.org/t/p/w500/6XYLiMxHAaCsoyrVo38LBWMw2p8.jpg" alt="The Falcon and the Winter Soldier" class="row-poster">
+                <img src="https://image.tmdb.org/t/p/w500/6kbAMLteGO8yyewYau6bJ683sw7.jpg" alt="The Crown" class="row-poster">
+                <img src="https://image.tmdb.org/t/p/w500/34nDCQZwaEvsy4CFO5hkGRFDCVU.jpg" alt="Ozark" class="row-poster">
+                <img src="https://image.tmdb.org/t/p/w500/6fV0RZtzlEhQ9hOIZqjNZPy6Gl6.jpg" alt="The Queen's Gambit" class="row-poster">
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>Questions? Call 1-844-505-2993</p>
+        <div class="footer-links">
+            <a href="#">FAQ</a>
+            <a href="#">Help Center</a>
+            <a href="#">Account</a>
+            <a href="#">Media Center</a>
+            <a href="#">Investor Relations</a>
+            <a href="#">Jobs</a>
+            <a href="#">Ways to Watch</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Privacy</a>
+            <a href="#">Cookie Preferences</a>
+            <a href="#">Corporate Information</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Speed Test</a>
+            <a href="#">Legal Notices</a>
+            <a href="#">Only on Netflix</a>
+        </div>
+        <p>Netflix Clone (for educational purposes)</p>
+    </footer>
+    
+    <script>
+        // Simple JavaScript for demonstration
+        document.addEventListener('DOMContentLoaded', function() {
+            // Make navbar solid when scrolling
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 100) {
+                    navbar.style.background = '#141414';
+                } else {
+                    navbar.style.background = 'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)';
+                }
+            });
+            
+            // Simple hover effect for posters
+            const posters = document.querySelectorAll('.row-poster');
+            posters.forEach(poster => {
+                poster.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.08)';
+                });
+                poster.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+            
+            // Email signup button click
+            const signupBtn = document.querySelector('.email-signup button');
+            signupBtn.addEventListener('click', function() {
+                const emailInput = document.querySelector('.email-signup input');
+                if (emailInput.value.includes('@')) {
+                    alert('Thank you for signing up! (This is just a demo)');
+                    emailInput.value = '';
+                } else {
+                    alert('Please enter a valid email address');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
